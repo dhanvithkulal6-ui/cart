@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - SoleStreet Footwear</title>
+  <meta name="description" content="Complete your purchase with secure Indian payment methods including UPI, Cards, and Cash on Delivery with fast delivery nationwide.">
+  
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span><i class="fa-solid fa-shield-halved"></i> 100% Encrypted & Secure Checkout</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="contact.html"><i class="fa-solid fa-headset"></i> Support</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navbar -->
+  <header class="navbar-sticky">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-shoe-prints"></i></div>
+        Sole<span>Street</span>
+      </a>
+
+      <nav class="nav-menu" id="main-nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Shop Collection</a>
+        <a href="cart.html" class="nav-link">Cart</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="action-btn" title="Back to Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" style="display:none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="checkout-page">
+    <div class="container">
+      
+      <div class="shop-header">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+          <a href="cart.html">Cart</a>
+          <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+          <span>Checkout</span>
+        </div>
+        <h1 style="font-size: 2.5rem;">Express Checkout</h1>
+      </div>
+
+      <div class="checkout-grid">
+        <!-- Customer Info & Payment Form -->
+        <form class="checkout-form-card" id="checkout-form">
+          
+          <!-- Shipping Address -->
+          <div style="margin-bottom: 2.5rem;">
+            <h3 class="form-section-title"><i class="fa-solid fa-truck-ramp-box"></i> 1. Shipping Details</h3>
+            
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="cust-name">Full Name *</label>
+                <input type="text" id="cust-name" class="form-input" placeholder="e.g. Rahul Sharma" required>
+              </div>
+              <div class="form-group">
+                <label for="cust-phone">Phone Number (For Delivery SMS) *</label>
+                <input type="tel" id="cust-phone" class="form-input" placeholder="+91 9876543210" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cust-email">Email Address *</label>
+              <input type="email" id="cust-email" class="form-input" placeholder="rahul@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="cust-address">Delivery Address (House No, Street, Landmark) *</label>
+              <input type="text" id="cust-address" class="form-input" placeholder="Flat 402, Sunshine Apartments, Park Street" required>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="cust-city">City *</label>
+                <input type="text" id="cust-city" class="form-input" placeholder="Mumbai" required>
+              </div>
+              <div class="form-group">
+                <label for="cust-state">State *</label>
+                <input type="text" id="cust-state" class="form-input" placeholder="Maharashtra" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cust-pincode">Pincode *</label>
+              <input type="text" id="cust-pincode" class="form-input" placeholder="400001" required>
+            </div>
+          </div>
+
+          <!-- Delivery Speed Selection -->
+          <div style="margin-bottom: 2.5rem;">
+            <h3 class="form-section-title"><i class="fa-solid fa-box-open"></i> 2. Delivery Speed</h3>
+            <div style="display:flex; flex-direction:column; gap:0.75rem;">
+              <label class="filter-checkbox" style="background:var(--bg-dark); padding:1rem; border-radius:8px; border:1px solid var(--border-color);">
+                <input type="radio" name="delivery-method" value="standard" data-price="0" checked>
+                <div>
+                  <div style="font-weight:700; color:white;">Standard Shipping (Free over ₹2,999)</div>
+                  <div style="font-size:0.8rem; color:var(--text-muted);">Delivery in 3 - 5 Business Days</div>
+                </div>
+              </label>
+
+              <label class="filter-checkbox" style="background:var(--bg-dark); padding:1rem; border-radius:8px; border:1px solid var(--border-color);">
+                <input type="radio" name="delivery-method" value="express" data-price="199">
+                <div>
+                  <div style="font-weight:700; color:white;">Express Priority Delivery (+₹199)</div>
+                  <div style="font-size:0.8rem; color:var(--text-muted);">Guaranteed 24 - 48 Hours Delivery</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Payment Options -->
+          <div>
+            <h3 class="form-section-title"><i class="fa-solid fa-credit-card"></i> 3. Payment Method</h3>
+            
+            <div class="payment-options-grid">
+              <div class="payment-option-card selected" data-method="upi">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <div style="font-weight:700; font-size:0.85rem;">UPI / GPay</div>
+              </div>
+              <div class="payment-option-card" data-method="card">
+                <i class="fa-solid fa-credit-card"></i>
+                <div style="font-weight:700; font-size:0.85rem;">Card</div>
+              </div>
+              <div class="payment-option-card" data-method="cod">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <div style="font-weight:700; font-size:0.85rem;">Cash on Delivery</div>
+              </div>
+            </div>
+
+            <!-- UPI Details Form -->
+            <div id="upi-details-form" style="display:block; background:var(--bg-dark); padding:1.25rem; border-radius:8px; border:1px solid var(--border-color); margin-bottom:1.5rem;">
+              <div class="form-group" style="margin-bottom:0;">
+                <label>Enter UPI ID (VPA)</label>
+                <input type="text" class="form-input" placeholder="e.g. mobileNumber@upi / username@okaxis">
+              </div>
+            </div>
+
+            <!-- Card Details Form -->
+            <div id="card-details-form" style="display:none; background:var(--bg-dark); padding:1.25rem; border-radius:8px; border:1px solid var(--border-color); margin-bottom:1.5rem;">
+              <div class="form-group">
+                <label>Card Number</label>
+                <input type="text" class="form-input" placeholder="4532 •••• •••• 8901">
+              </div>
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label>Expiry (MM/YY)</label>
+                  <input type="text" class="form-input" placeholder="08/28">
+                </div>
+                <div class="form-group">
+                  <label>CVV Code</label>
+                  <input type="password" class="form-input" placeholder="•••" maxlength="4">
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:1rem;">
+              <i class="fa-solid fa-lock"></i> Place Order Now
+            </button>
+          </div>
+
+        </form>
+
+        <!-- Right Column: Order Items Summary -->
+        <aside class="order-summary-card">
+          <h3 class="summary-title">Order Items</h3>
+          
+          <div id="checkout-items-list" style="max-height:350px; overflow-y:auto; margin-bottom:1.5rem; padding-right:0.5rem;">
+            <!-- Rendered dynamically by checkout.js -->
+          </div>
+
+          <div style="border-top:1px solid var(--border-color); padding-top:1rem;">
+            <div class="summary-row">
+              <span style="color:var(--text-muted);">Subtotal</span>
+              <span id="checkout-subtotal" style="font-weight:700;">₹0</span>
+            </div>
+            <div class="summary-row" id="checkout-discount-row" style="display:none; color:var(--accent-orange);">
+              <span>Discount</span>
+              <span id="checkout-discount" style="font-weight:700;">-₹0</span>
+            </div>
+            <div class="summary-row">
+              <span style="color:var(--text-muted);">Shipping</span>
+              <span id="checkout-delivery" style="font-weight:700; color:var(--accent-orange);">FREE</span>
+            </div>
+            <div class="summary-row total">
+              <span>Grand Total</span>
+              <span id="checkout-total">₹0</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 SoleStreet Footwear Pvt. Ltd. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoleStreet - Step Into Your Style | Premium Footwear E-Commerce</title>
+  <meta name="description" content="Discover premium streetwear sneakers, running shoes, formal leather Oxfords, boots, and sandals at SoleStreet. Free express shipping nationwide across India.">
+  
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span><i class="fa-solid fa-truck-fast"></i> Free Shipping on orders over ₹2,999</span>
+        <span><i class="fa-solid fa-shield-halved"></i> 100% Authentic Footwear Guarantee</span>
+      </div>
+      <div class="top-bar-right">
+        <span><i class="fa-solid fa-tag"></i> Use Code: <strong>STREET10</strong> for 10% OFF</span>
+        <a href="contact.html"><i class="fa-solid fa-headset"></i> Support</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navigation Header -->
+  <header class="navbar-sticky">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-shoe-prints"></i></div>
+        Sole<span>Street</span>
+      </a>
+
+      <nav class="nav-menu" id="main-nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="products.html" class="nav-link">Shop Collection</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="action-btn" id="search-toggle-btn" title="Search Footwear">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <a href="products.html" class="action-btn" title="Wishlist">
+          <i class="fa-solid fa-heart"></i>
+          <span class="wishlist-badge" style="display:none;">0</span>
+        </a>
+
+        <a href="cart.html" class="action-btn" title="Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" style="display:none;">0</span>
+        </a>
+
+        <button class="mobile-nav-toggle" id="mobile-menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search Modal Drawer -->
+  <div class="search-modal" id="global-search-modal">
+    <div class="search-close" id="search-modal-close"><i class="fa-solid fa-xmark"></i></div>
+    <div class="search-box-container">
+      <h2 style="font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Search SoleStreet Footwear</h2>
+      <div class="search-input-wrapper">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="global-search-input" class="search-input" placeholder="Search by shoe name, brand (e.g., Nike, Adidas), category...">
+      </div>
+      <div class="search-results-preview" id="search-results-preview"></div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="section-tag"><i class="fa-solid fa-fire"></i> New Season Drop 2026</span>
+          <h1 class="hero-title">Step Into Your <span class="text-orange">Style.</span></h1>
+          <p class="hero-subtitle">Discover footwear that moves with you. From high-performance trail runners to artisanal Italian leather dress shoes and urban street icons.</p>
+
+          <div class="hero-buttons">
+            <a href="products.html" class="btn btn-primary btn-lg">
+              Shop Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#categories-section" class="btn btn-secondary btn-lg">
+              Explore Collection
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3>50+</h3>
+              <p>Curated Models</p>
+            </div>
+            <div class="stat-item">
+              <h3>100%</h3>
+              <p>Authentic Leather & Tech</p>
+            </div>
+            <div class="stat-item">
+              <h3>4.9★</h3>
+              <p>Over 15,000+ Reviews</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-banner">
+          <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1000&q=80" alt="SoleStreet Nike Air Street Force Banner" class="hero-image">
+            <div class="hero-floating-card">
+              <div class="floating-icon"><i class="fa-solid fa-award"></i></div>
+              <div>
+                <div style="font-weight:800; font-size:1rem;">Nike Air Street Force 1</div>
+                <div style="font-size:0.8rem; color:var(--accent-orange); font-weight:700;">Featured Icon • ₹3,995</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Cards Section -->
+    <section class="categories-section" id="categories-section">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <span class="section-tag">Footwear Categories</span>
+          <h2 class="section-title">Explore By Category</h2>
+          <p class="section-desc" style="margin: 0 auto;">Engineered for every occasion, from gym sprints to executive boardrooms and weekend street walks.</p>
+        </div>
+
+        <div class="category-grid" id="home-categories-grid">
+          <!-- Dynamically populates via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="products-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-tag">Handpicked Selection</span>
+            <h2 class="section-title">Featured Products</h2>
+          </div>
+          <a href="products.html" class="btn btn-outline">View All Products <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="products-grid" id="featured-products-grid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Sneakers Section -->
+    <section class="products-section" style="background-color: #0E0E0E; padding: 5rem 0;">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-tag"><i class="fa-solid fa-bolt"></i> Trending Now</span>
+            <h2 class="section-title">Top Streetwear Sneakers</h2>
+          </div>
+          <a href="products.html?category=Sneakers" class="btn btn-outline">View Sneakers <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="products-grid" id="trending-sneakers-grid">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Promotional Discount Banner -->
+    <section class="promo-banner-section">
+      <div class="container">
+        <div class="promo-banner-card">
+          <div class="promo-grid">
+            <div class="promo-content">
+              <span class="badge badge-orange" style="margin-bottom: 1rem;">Limited Time Discount</span>
+              <h2>Get 10% OFF Your First Order</h2>
+              <p>Upgrade your footwear rotation today. Apply our exclusive promo coupon during checkout for instant savings across all brands.</p>
+              
+              <div class="promo-code-box">
+                <i class="fa-solid fa-ticket"></i>
+                <span>COUPON CODE:</span>
+                <span class="promo-code-text">STREET10</span>
+              </div>
+
+              <div>
+                <a href="products.html" class="btn btn-primary btn-lg">Claim Discount Now</a>
+              </div>
+            </div>
+
+            <div style="text-align: center;">
+              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="Promo Shoe" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg); transform: rotate(-5deg); max-height:360px; margin:0 auto;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Subscription Section -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-box">
+          <span class="section-tag"><i class="fa-regular fa-paper-plane"></i> VIP Access</span>
+          <h2>Join The SoleStreet Club</h2>
+          <p>Subscribe to receive early access to limited sneaker drops, private sales, and secret promo codes.</p>
+
+          <form class="newsletter-form" id="home-newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address..." required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fa-solid fa-shoe-prints"></i></div>
+            Sole<span>Street</span>
+          </a>
+          <p class="footer-brand-p">SoleStreet is a premier destination for streetwear sneakers, running shoes, formal dress footwear, and outdoor boots. Crafted for comfort, styled for distinction.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">All Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="cart.html">Shopping Cart</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Categories</h4>
+          <div class="footer-links">
+            <a href="products.html?category=Sneakers">Sneakers</a>
+            <a href="products.html?category=Running Shoes">Running Shoes</a>
+            <a href="products.html?category=Sports Shoes">Sports Shoes</a>
+            <a href="products.html?category=Formal Shoes">Formal Shoes</a>
+            <a href="products.html?category=Boots">Boots & Sandals</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Customer Support</h4>
+          <div class="footer-links">
+            <p style="color:var(--text-muted); font-size:0.9rem;"><i class="fa-solid fa-location-dot" style="color:var(--accent-orange);"></i> Connaught Place, New Delhi, India</p>
+            <p style="color:var(--text-muted); font-size:0.9rem;"><i class="fa-solid fa-envelope" style="color:var(--accent-orange);"></i> support@solestreet.in</p>
+            <p style="color:var(--text-muted); font-size:0.9rem;"><i class="fa-solid fa-phone" style="color:var(--accent-orange);"></i> +91 1800-555-SOLE</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 SoleStreet Footwear Pvt. Ltd. All Rights Reserved.</p>
+        <div style="display:flex; gap:1rem; font-size:1.4rem; color:var(--text-muted);">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-solid fa-qrcode"></i>
+          <i class="fa-solid fa-money-bill-wave"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const categoriesGrid = document.getElementById('home-categories-grid');
+      if (categoriesGrid) {
+        categoriesGrid.innerHTML = CATEGORIES.map(cat => `
+          <div class="category-card" onclick="window.location.href='products.html?category=${encodeURIComponent(cat.id)}'">
+            <img src="${cat.image}" alt="${cat.name}">
+            <div class="category-overlay">
+              <h3 class="category-title">${cat.name}</h3>
+              <p class="category-subtitle">${cat.subtitle}</p>
+              <span class="category-link">Explore (${cat.count}) <i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      const featuredGrid = document.getElementById('featured-products-grid');
+      const wishlist = getWishlist();
+
+      if (featuredGrid) {
+        const featured = PRODUCTS.filter(p => p.isFeatured).slice(0, 8);
+        featuredGrid.innerHTML = featured.map(p => `
+          <div class="product-card">
+            <div class="product-image-box">
+              <img src="${p.image}" alt="${p.name}">
+              ${p.badge ? `<div class="product-badges"><span class="badge badge-orange">${p.badge}</span></div>` : ''}
+              <button class="product-wishlist-btn ${wishlist.includes(p.id) ? 'active' : ''}" data-id="${p.id}" onclick="toggleWishlist('${p.id}')">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
+            <div class="product-details-content">
+              <div class="product-brand">${p.brand}</div>
+              <h3 class="product-title"><a href="product-details.html?id=${p.id}">${p.name}</a></h3>
+              <div class="product-rating">
+                ${generateStarRatingHTML(p.rating)}
+                <span class="rating-count">(${p.reviewsCount})</span>
+              </div>
+              <div class="product-price-row">
+                <span class="product-price">${formatPrice(p.price)}</span>
+                ${p.originalPrice ? `<span class="product-original-price">${formatPrice(p.originalPrice)}</span>` : ''}
+              </div>
+              <div class="product-card-footer">
+                <a href="product-details.html?id=${p.id}" class="btn btn-secondary btn-sm btn-block">View Details</a>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      const trendingGrid = document.getElementById('trending-sneakers-grid');
+      if (trendingGrid) {
+        const trending = PRODUCTS.filter(p => p.category === 'Sneakers' && p.isTrending).slice(0, 4);
+        trendingGrid.innerHTML = trending.map(p => `
+          <div class="product-card">
+            <div class="product-image-box">
+              <img src="${p.image}" alt="${p.name}">
+              ${p.badge ? `<div class="product-badges"><span class="badge badge-dark">${p.badge}</span></div>` : ''}
+              <button class="product-wishlist-btn ${wishlist.includes(p.id) ? 'active' : ''}" data-id="${p.id}" onclick="toggleWishlist('${p.id}')">
+                <i class="fa-solid fa-heart"></i>
+              </button>
+            </div>
+            <div class="product-details-content">
+              <div class="product-brand">${p.brand}</div>
+              <h3 class="product-title"><a href="product-details.html?id=${p.id}">${p.name}</a></h3>
+              <div class="product-rating">
+                ${generateStarRatingHTML(p.rating)}
+                <span class="rating-count">(${p.reviewsCount})</span>
+              </div>
+              <div class="product-price-row">
+                <span class="product-price">${formatPrice(p.price)}</span>
+                ${p.originalPrice ? `<span class="product-original-price">${formatPrice(p.originalPrice)}</span>` : ''}
+              </div>
+              <div class="product-card-footer">
+                <a href="product-details.html?id=${p.id}" class="btn btn-primary btn-sm btn-block">View Details</a>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      const newsletterForm = document.getElementById('home-newsletter-form');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          showToast('Subscribed!', 'Thank you for joining the SoleStreet VIP newsletter.', 'fa-solid fa-circle-check');
+          newsletterForm.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

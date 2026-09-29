@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed - SoleStreet Footwear</title>
+  <meta name="description" content="Your SoleStreet order has been confirmed successfully. View your order receipt, items summary, and delivery tracking.">
+  
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header class="navbar-sticky">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-shoe-prints"></i></div>
+        Sole<span>Street</span>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Shop Collection</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="confirmation-page">
+    <div class="container" style="display:flex; justify-content:center;">
+      <div class="confirmation-card">
+        <div class="success-badge-icon">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+
+        <h1 style="font-size: 2.25rem; margin-bottom: 0.5rem;">Order Placed Successfully!</h1>
+        <p style="color: var(--text-muted); font-size: 1.05rem;">Thank you for shopping with SoleStreet. Your order confirmation details are below.</p>
+
+        <div class="order-receipt-box" id="order-receipt-container">
+          <div class="receipt-header">
+            <div>
+              <div style="font-size:0.8rem; color:var(--text-muted);">ORDER ID</div>
+              <div id="order-id-display" style="font-weight:800; color:var(--accent-orange); font-size:1.1rem;">SOLE-IN-000000</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:0.8rem; color:var(--text-muted);">ORDER DATE</div>
+              <div id="order-date-display" style="font-weight:600;">Today</div>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.25rem; font-size:0.9rem;">
+            <strong>Shipping To:</strong>
+            <div id="order-customer-display" style="color:var(--text-muted); margin-top:0.2rem;">-</div>
+          </div>
+
+          <h4 style="font-size:0.95rem; margin-bottom:0.75rem; color:var(--accent-orange);">Order Summary</h4>
+          <div class="receipt-items" id="order-items-display">
+            <!-- Items rendered dynamically -->
+          </div>
+
+          <hr style="border:none; border-top:1px solid var(--border-color); margin:1rem 0;">
+
+          <div class="receipt-item-line" style="font-weight:800; font-size:1.1rem;">
+            <span>Grand Total Paid</span>
+            <span id="order-total-display" style="color:var(--accent-orange);">₹0</span>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:1rem; justify-content:center;">
+          <a href="products.html" class="btn btn-primary btn-lg">Continue Shopping</a>
+          <a href="index.html" class="btn btn-secondary btn-lg">Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 SoleStreet Footwear Pvt. Ltd. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const orderData = JSON.parse(localStorage.getItem('solestreet_last_order'));
+      if (!orderData) {
+        window.location.href = 'index.html';
+        return;
+      }
+
+      document.getElementById('order-id-display').textContent = orderData.orderId;
+      document.getElementById('order-date-display').textContent = orderData.date;
+      document.getElementById('order-customer-display').innerHTML = `
+        ${orderData.customer.fullName} • ${orderData.customer.phone}<br>
+        ${orderData.customer.address}, ${orderData.customer.city}, ${orderData.customer.state} - ${orderData.customer.pincode}
+      `;
+
+      const itemsContainer = document.getElementById('order-items-display');
+      itemsContainer.innerHTML = orderData.items.map(item => `
+        <div class="receipt-item-line">
+          <span>${item.name} (UK ${item.size}) x${item.quantity}</span>
+          <span>${formatPrice(item.price * item.quantity)}</span>
+        </div>
+      `).join('');
+
+      document.getElementById('order-total-display').textContent = formatPrice(orderData.grandTotal);
+    });
+  </script>
+</body>
+</html>
